@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CoolSpot {
+  id                        String   @id @default(cuid())
+  sourceId                  String?
+  dataset                   String
+  nom                       String
+  type                      String?
+  lat                       Float
+  lng                       Float
+  adresse                   String?
+  arrondissement            String?
+  isFree                    Boolean?
+  isAvailable               Boolean?
+  caniculeOuverture         Boolean?
+  ouvertureEstivaleNocturne Boolean?
+  categorie                 String?
+  modele                    String?
+  surfVegetSup8m2024        Float?
+  indiceVegetSup8m2024      Float?
+  heatRiskScore             Float
+  createdAt                 DateTime @default(now())
+  updatedAt                 DateTime @updatedAt
+
+  @@unique([sourceId, dataset])
+  @@index([dataset])
+  @@index([arrondissement])
+  @@index([isFree])
+  @@index([heatRiskScore])
+  @@index([dataset, arrondissement, isFree])
+}

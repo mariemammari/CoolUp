@@ -1,0 +1,53 @@
+# Root Git ignore for CoolUp workspace
+
+# Node.js
+node_modules/
+**/node_modules/
+/dist
+/build
+/.cache
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# dotenv environment variable files
+.env
+.env.*
+
+# Editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+
+# React / frontend builds
+build/
+coverage/
+
+# Go artifacts
+**/bin/
+**/pkg/
+
+# Misc
+.DS_Store
+*.swp
+*.tmp
+*.temp
